@@ -1,4 +1,4 @@
-import { createStore, combineReducers, applyMiddleware  } from "redux";
+import { createStore, combineReducers, applyMiddleware, compose  } from "redux";
 import fruitReducer from "./fruit/fruitReducer";
 import milkReducer from "./milk/milkReducer";
 import cheeseReducer from "./cheese/cheeseReducer";
@@ -15,7 +15,8 @@ const rootReducer = combineReducers({
     album: albumReducer,
     
 })
+ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const store = createStore(rootReducer, applyMiddleware(thunk, logger))
+const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk, logger)) )
 
 export default store;
