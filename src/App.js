@@ -4,6 +4,7 @@ import store from "./redux/store";
 import FruitSection from "./componants/FruitSection";
 import MilkSection from "./componants/MilkSection";
 import CheeseSection from "./componants/CheeseSection";
+import AlbumList from "./componants/AlbumList";
 
 
 
@@ -16,6 +17,7 @@ function App() {
       <FruitSection/>
       <MilkSection/>
       <CheeseSection/>
+      <AlbumList/>
      
     </div>
     </Provider>
